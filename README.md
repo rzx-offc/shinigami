@@ -11,11 +11,16 @@ A custom dark editorial-style reading-library frontend built with Next.js 15, Ty
 npm install
 ```
 
-Put the catalog JSON exported by your own scraper at either:
+Put the catalog JSON exported by your scraper at either:
 - `data/catalog_all.json` (recommended), or
 - `catalog_all.json` in the project root.
 
-The catalog reader accepts a top-level array or an object containing a `data`, `results`, or `items` array. Each item should include an ID and title. Cover fields supported: `cover`, `cover_url`, `image`, `thumbnail`, or `poster`.
+The catalog reader accepts a top-level array or an object containing a `data`, `results`, or `items` array. It supports the scraper's fields:
+- ID/title: `manga_id`, `title`
+- Cover: `cover_image_url`, `cover_portrait_url` (also accepts common cover/image aliases)
+- Description: `description`
+- Format: `taxonomy.Format[].name` or `_category`
+- Latest release: `latest_chapter_id`, `latest_chapter_number`, `latest_chapter_time`
 
 Run locally:
 ```bash
