@@ -1,0 +1,12 @@
+"use client";
+import { useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, Search, X } from "lucide-react";
+type Item={id:string;title:string;cover:string;type:string;status:string;latest_chapter:string};
+export default function ExploreClient({items}:{items:Item[]}) {
+ const [query,setQuery]=useState(""); const [type,setType]=useState("All");
+ const types=["All","Manhwa","Manhua","Manga"];
+ const filtered=useMemo(()=>items.filter(x=>(type==="All"||x.type.toLowerCase().includes(type.toLowerCase()))&&x.title.toLowerCase().includes(query.toLowerCase())),[items,query,type]);
+ return <main><header className="topbar wrap"><Link className="brand" href="/"><span className="brand-mark">S</span><span>SHINIGAMI<span className="brand-dot">.</span></span></Link><Link className="text-link" href="/"><ArrowLeft size={15}/> Home</Link></header><section className="library wrap"><div className="eyebrow">THE COLLECTION</div><div className="section-head"><div><h2>Explore the library<span className="brand-dot">.</span></h2><p style={{color:"#96938b",fontSize:12}}>{filtered.length.toLocaleString("id-ID")} titles</p></div></div><div className="explore-tools"><div className="explore-search"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a title..." aria-label="Search titles"/>{query&&<button onClick={()=>setQuery("")} aria-label="Clear search"><X size={15}/></button>}</div><div className="filters">{types.map(t=><button className={type===t?"active":""} key={t} onClick={()=>setType(t)}>{t}</button>)}</div></div>{filtered.length?<div className="series-grid">{filtered.map(item=><Link href={`/series/${encodeURIComponent(item.id)}`} className="series-card" key={item.id}><div className="poster">{item.cover?<Image src={item.cover} alt={item.title} fill unoptimized sizes="(max-width:700px) 45vw,180px"/>:<div className="cover-placeholder">{item.title.slice(0,1)}</div>}<span className="type-tag">{item.type}</span></div><div className="series-meta"><h3>{item.title}</h3><p>{item.latest_chapter||item.status||item.type}</p></div></Link>)}</div>:<div className="empty-state"><h3>No titles found.</h3><p>Try another title or category.</p></div>}</section><footer className="footer wrap"><span>SHINIGAMI<span className="brand-dot">.</span></span><span>A quieter corner of the internet for stories.</span></footer></main>;
+}
