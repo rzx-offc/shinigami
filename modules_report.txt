@@ -1,0 +1,294 @@
+
+### modules/nodes/0.Cj-Md4PD.js
+
+### modules/nodes/1.DilO1Gwb.js
+
+### modules/nodes/10.C54jDhOf.js
+
+### modules/nodes/11.peHlAIJb.js
+
+### modules/nodes/12.BtLkzpW7.js
+ENDPOINT: Search
+ENDPOINT: __chapterBaseUrl
+
+### modules/nodes/13.Dzg7icLa.js
+
+### modules/nodes/14.DSHoOBUY.js
+ENDPOINT: /series/
+ENDPOINT: /series/${s.slider_link}
+ENDPOINT: /chapter/${r[4].chapter_id}
+ENDPOINT: ,$),m=!0)},p(g,d){r=g,d&1&&l!==(l=r[4].chapter_number+
+ENDPOINT: ),t=pe(l,n)},m(l,i){R(l,e,i),R(l,t,i)},p(l,i){i&1&&n!==(n=l[4].chapter_number+
+ENDPOINT: /chapter/${c.chapter_id}
+
+### modules/nodes/15.D34jMy8V.js
+
+### modules/nodes/16.p1atAj7F.js
+
+### modules/nodes/17.BmgikkX1.js
+ENDPOINT: __chapterOverlayV2
+ENDPOINT: https://ads.shinigami.io/v1/pages/chapter_pop
+ENDPOINT: chapter_pop
+ENDPOINT: https://api.shngm.io/v1/chapter/detail/${s.params.chapter_id}
+ENDPOINT: chapter
+ENDPOINT: /chapter/
+ENDPOINT: /icons/search-line.svg
+ENDPOINT: Search
+ENDPOINT: chapter_number
+ENDPOINT: __chapterBaseUrl
+ENDPOINT: /series/
+ENDPOINT: /chapter/${v.prev_chapter_id}
+ENDPOINT: /chapter/${v.next_chapter_id}
+ENDPOINT: https://api.shngm.io/v1/chapter/add-view
+ENDPOINT: chapter/
+
+### modules/nodes/18.DH7VzXH9.js
+FETCH: fetch("https://api.shngm.io/v1/history/list/manga?"+new URLSearchParams({page:1,page_size:i>=1024?8:9,sort_by:"updated_at",sort_order:"desc"})
+ENDPOINT: /series/
+ENDPOINT: https://explore.shngm.io/v1/web
+ENDPOINT: https://ads.shinigami.io/v1/pages/explore
+ENDPOINT: explore
+
+### modules/nodes/19.fiTlcI5s.js
+ENDPOINT: /search
+
+### modules/nodes/2.Cj-Md4PD.js
+
+### modules/nodes/20.CnAuTOuY.js
+ENDPOINT: /chapter/
+ENDPOINT: chapter_number
+ENDPOINT: https://api.shngm.io/v1/history/list/chapter/${t.params.id}?
+
+### modules/nodes/21.BexsPzwo.js
+FETCH: fetch("https://api.shngm.io/v1/readlist/manga/remove",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json",Authorization:`Bearer ${i==null?void 0:i.token}`},body:JSON.stringify({library_id:u.params.id,manga_id:s.map(o=>o.manga_id)
+
+### modules/nodes/22.CLOrYj_l.js
+
+### modules/nodes/23.DeSTvl8U.js
+
+### modules/nodes/24.BHJRlH25.js
+ENDPOINT: /icons/search-line.svg
+ENDPOINT: Search
+ENDPOINT: search
+ENDPOINT: https://ads.shinigami.io/v1/pages/search
+
+### modules/nodes/25.BfPSI4O_.js
+FETCH: fetch("https://api.shngm.io/v1/readlist/create",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json",Authorization:`Bearer ${l==null?void 0:l.token}`},body:JSON.stringify({title:s,manga_id:[n.manga_id]})
+ENDPOINT: chapter_number
+ENDPOINT: /chapter/${a}
+ENDPOINT: /chapter/${r}
+ENDPOINT: /search
+ENDPOINT: /icons/search-line.svg
+ENDPOINT: )},m(n,a){T(n,e,a),v(e,l)},p(n,a){a[0]&8&&t!==(t=n[29].chapter_title+
+ENDPOINT: ,n=i[29].chapter_title),g(_,
+ENDPOINT: /chapter/
+ENDPOINT: ,l),(!P||K[0]&8&&n!==(n=i[29].chapter_title))&&g(t,
+ENDPOINT: ,n),(!P||K[0]&8)&&c!==(c=i[29].chapter_number+
+ENDPOINT: )&&ke(h,c),i[29].chapter_title?x?x.p(i,K):(x=ul(i),x.c(),x.m(r,u)):x&&(x.d(1),x=null),(!P||K[0]&8)&&f!==(f=Ft(i[29].release_date)+
+ENDPOINT: https://api.shngm.io/v1/chapter/${r.manga_id}/list?
+ENDPOINT: https://api.shngm.io/v1/chapter/${r.manga_id}/history?
+ENDPOINT: /chapter/${x.chapter_id}
+ENDPOINT: Chapters
+ENDPOINT: chapters
+ENDPOINT: handleSearch
+ENDPOINT: }=e,{search:o=
+ENDPOINT: search
+ENDPOINT: series/
+
+### modules/nodes/26.CzZ4K5eI.js
+
+### modules/nodes/27.BcdWXulu.js
+
+### modules/nodes/28.DfmPEyqb.js
+
+### modules/nodes/29.3ZgaO15v.js
+
+### modules/nodes/3.BE4kNSF2.js
+
+### modules/nodes/30.6T6-wz5K.js
+
+### modules/nodes/31.BGYsqmZY.js
+
+### modules/nodes/32.BTSUJr8Q.js
+
+### modules/nodes/33.BTSUJr8Q.js
+
+### modules/nodes/34.BTSUJr8Q.js
+
+### modules/nodes/35.BQoCvHes.js
+
+### modules/nodes/36.BTSUJr8Q.js
+
+### modules/nodes/37.C9QGh-Z5.js
+
+### modules/nodes/4.DVB0OgQl.js
+
+### modules/nodes/5.Bl8PpxAF.js
+ENDPOINT: /explore
+ENDPOINT: /search
+ENDPOINT: /chapter/
+ENDPOINT: /(clearToken)/(authenticated)/(session)/(withNavbar)/(withoutSidebar)/chapter/[chapter_id]
+
+### modules/nodes/6.C-WnQQlw.js
+
+### modules/nodes/7.C0v3mgWV.js
+ENDPOINT: /series/
+ENDPOINT: searchOpen
+ENDPOINT: search
+ENDPOINT: Chapter
+ENDPOINT: /chapter/
+ENDPOINT: /(clearToken)/(authenticated)/(session)/(withNavbar)/(withoutSidebar)/chapter/[chapter_id]
+ENDPOINT: /(clearToken)/(authenticated)/(session)/(withNavbar)/(withoutSidebar)/chapter/[chapter_id]/novel
+ENDPOINT: /(clearToken)/(authenticated)/(session)/(withNavbar)/(withoutSidebar)/series/[id]
+ENDPOINT: /search?q=${w}
+ENDPOINT: /chapter/${_}${De.route.id===le?
+ENDPOINT: Explore
+ENDPOINT: /search
+ENDPOINT: /explore
+ENDPOINT: /icons/mobile-explore.svg
+
+### modules/nodes/8.BbKp0S6K.js
+
+### modules/nodes/9.BbKp0S6K.js
+
+### modules/chunks/3wZBwt48.js
+
+### modules/chunks/6s7KIvsq.js
+ENDPOINT: URLSearchParams
+ENDPOINT: ?Blob:null,ec={isBrowser:!0,classes:{URLSearchParams:Ku,FormData:Xu,Blob:Qu},protocols:[
+
+### modules/chunks/B6HY3dNC.js
+
+### modules/chunks/B6vP1el3.js
+
+### modules/chunks/B86Gw3UZ.js
+
+### modules/chunks/B8nBKRyq.js
+
+### modules/chunks/BA7WVz3A.js
+
+### modules/chunks/BAbjhVFN.js
+FETCH: fetch(`${Yt(e)
+FETCH: fetch(`https://api.giphy.com/v1/gifs/${n}?${new URLSearchParams({lang:e,limit:"20",rating:"g",api_key:"6CIMLkNMMOhRcXPoMCPkFy4Ybk2XUiMp",...s})
+FETCH: fetch(`${e}/info.json`)
+FETCH: fetch(`${le}/api/user/${U}?lang=${te}`,{method:"PUT",headers:{"Content-Type":"application/json",Authorization:`Bearer ${(X=l.value)
+FETCH: fetch("https://profileupload.shngm.id/upload/image",{method:"POST",body:h})
+ENDPOINT: +o.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex))}for(;(l=this.tokenizer.rules.inline.blockSkip.exec(o))!=null;)o=o.slice(0,l.index)+
+ENDPOINT: ).then(i=>i.json()).then(({data:i})=>i.map(r=>({title:r.title,src:r.images.downsized_medium.url})));return{search:n=>t(
+ENDPOINT: search
+ENDPOINT: gifSearchPlaceholder
+ENDPOINT: ,search:_,reaction:L,recaptchaV3Key:A=
+ENDPOINT: gifSearchInputRef
+ENDPOINT: ,placeholder:s.locale.gifSearchPlaceholder,onInput:t[4]||(t[4]=(...a)=>s.onGifSearch&&s.onGifSearch(...a))},null,40,Rm),s.searchResults.list.length?(C(),Se(s.ImageWall,{key:0,items:s.searchResults.list,
+ENDPOINT: ,!0),s.searchResults.loading?(C(),D(
+ENDPOINT: ,gifSearchPlaceholder:
+
+### modules/chunks/BN6Jog80.js
+
+### modules/chunks/BUXWtBUD.js
+
+### modules/chunks/Bbdx5Bb_.js
+FETCH: fetch(f,m)
+ENDPOINT: URLSearchParams
+ENDPOINT: )&&e.searchParams.append(ea,
+ENDPOINT: ),e.searchParams.append(ta,a.map(o=>o?
+
+### modules/chunks/BdKweTx-.js
+
+### modules/chunks/BdrMzhAi.js
+
+### modules/chunks/BjcUszJD.js
+
+### modules/chunks/Bm3XBWiA.js
+
+### modules/chunks/BpMjypLv.js
+
+### modules/chunks/BrsMLt72.js
+
+### modules/chunks/Bt-Xh7oU.js
+
+### modules/chunks/C-sYMPAx.js
+FETCH: fetch(r)
+
+### modules/chunks/C1FmrZbK.js
+
+### modules/chunks/C3UcYUAd.js
+FETCH: fetch(e,t)
+FETCH: fetch(t,n)
+FETCH: fetch(`${L}/_app/version.json`,{headers:{pragma:"no-cache","cache-control":"no-cache"}})
+ENDPOINT: searchParams
+ENDPOINT: search
+
+### modules/chunks/CGUFel8-.js
+ENDPOINT: /series/${n[2].manga_id}/
+ENDPOINT: /series/${C[2].manga_id}/
+ENDPOINT: ,d,_,m,p,I,w=n[2].latest_chapter_number+
+ENDPOINT: )&&ue(d,o),(!X||O&4)&&w!==(w=B[2].latest_chapter_number+
+ENDPOINT: /series/${B[2].manga_id}/
+ENDPOINT: ,u,f,o,d,_,m=n[2].latest_chapter_number+
+ENDPOINT: ,f),w&4&&m!==(m=I[2].latest_chapter_number+
+ENDPOINT: /(clearToken)/(authenticated)/(session)/(withNavbar)/(withoutSidebar)/explore
+ENDPOINT: /series/${d.manga_id}/
+
+### modules/chunks/CHJb3SIe.js
+
+### modules/chunks/CI-A-TAP.js
+
+### modules/chunks/CJcRPFly.js
+
+### modules/chunks/CKugq_dR.js
+ENDPOINT: series-update
+ENDPOINT: Explore
+ENDPOINT: /explore
+ENDPOINT: Search
+ENDPOINT: /search
+
+### modules/chunks/CTSZbP1e.js
+
+### modules/chunks/Cb3mE--i.js
+ENDPOINT: ,e+=u.search||
+ENDPOINT: search
+ENDPOINT: ),u.re.schema_search=RegExp(
+ENDPOINT: +u.re.schema_search.source,
+
+### modules/chunks/CeE9EB1L.js
+
+### modules/chunks/CgU5AtxT.js
+
+### modules/chunks/ChBLSUIF.js
+
+### modules/chunks/CivX2h6N.js
+
+### modules/chunks/CjlBMThg.js
+
+### modules/chunks/ClY_l-h2.js
+ENDPOINT: searchbot
+
+### modules/chunks/CnMOonlP.js
+
+### modules/chunks/CsTw1B-x.js
+
+### modules/chunks/CsUP4JZ-.js
+
+### modules/chunks/CyfjT9CR.js
+
+### modules/chunks/D0QH3NT1.js
+
+### modules/chunks/D5Flff12.js
+
+### modules/chunks/DX1yBucK.js
+
+### modules/chunks/DjqI5Vg6.js
+
+### modules/chunks/Ds6tgvmq.js
+
+### modules/chunks/IHki7fMi.js
+
+### modules/chunks/LNHZwTdN.js
+ENDPOINT: search
+
+### modules/chunks/VGx4XtWX.js
+
+### modules/chunks/fGSdsNfu.js
+
+### modules/chunks/hACDX3PV.js

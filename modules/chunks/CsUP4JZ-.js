@@ -1,0 +1,1 @@
+function o(r){var n,f,t="";if(typeof r=="string"||typeof r=="number")t+=r;else if(typeof r=="object")if(Array.isArray(r))for(n=0;n<r.length;n++)r[n]&&(f=o(r[n]))&&(t&&(t+=" "),t+=f);else for(n in r)r[n]&&(t&&(t+=" "),t+=n);return t}function s(){for(var r,n,f=0,t="";f<arguments.length;)(r=arguments[f++])&&(n=o(r))&&(t&&(t+=" "),t+=n);return t}const a=s;export{s as a,a as c};
