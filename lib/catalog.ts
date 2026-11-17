@@ -24,6 +24,16 @@ async function request(path: string) {
 export function coverOf(item: Series) {
   return item.cover_portrait_url || item.cover_image_url || "";
 }
+export function cleanDescription(value?: string | null) {
+  if (!value) return "";
+  return value
+    .replace(/\\\\([\\[\\]{}<>|\x60*_])/g, "$1")
+    .replace(/\\\\(?=\\s|$)/g, "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'");
+}
 export function chapterOf(item: Series) {
   return item.latest_chapter_number !== null && item.latest_chapter_number !== undefined
     ? `Chapter ${item.latest_chapter_number}` : "Chapter belum tersedia";
