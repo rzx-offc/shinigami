@@ -1,0 +1,17 @@
+{
+  "chapters": [
+    {
+      "chapter_id": "source-chapter-id",
+      "manga_id": "existing-series-manga-id",
+      "chapter_number": 12,
+      "title": "Chapter 12",
+      "source_url": "https://source.example/chapter/source-chapter-id",
+      "published_at": "2026-11-17T00:00:00Z",
+      "sort_order": 12,
+      "pages": [
+        { "page_number": 1, "image_url": "https://images.example/page-001.jpg" },
+        { "page_number": 2, "image_url": "https://images.example/page-002.jpg" }
+      ]
+    }
+  ]
+}
