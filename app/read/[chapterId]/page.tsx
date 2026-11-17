@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import ReaderShell from "@/components/reader-shell";
-import { getSeries } from "@/lib/catalog";
-import { chapterLabel, getChapter, getChapterPages, getSeriesChapters } from "@/lib/chapters";
+import { getSeries, type Series } from "@/lib/catalog";
+import { chapterLabel, getChapter, getChapterPages, getSeriesChapters, type Chapter, type ChapterPage } from "@/lib/chapters";
 
 export const dynamic = "force-dynamic";
 
 export default async function ReadPage({ params }: { params: Promise<{ chapterId: string }> }) {
   const { chapterId } = await params;
-  let chapter = null;
+  let chapter: Chapter | null = null;
   try {
     chapter = await getChapter(decodeURIComponent(chapterId));
   } catch {
@@ -15,9 +15,9 @@ export default async function ReadPage({ params }: { params: Promise<{ chapterId
   }
   if (!chapter) notFound();
 
-  let series = null;
-  let pages = [];
-  let chapters = [];
+  let series: Series | null = null;
+  let pages: ChapterPage[] = [];
+  let chapters: Chapter[] = [];
   try {
     [series, pages, chapters] = await Promise.all([
       getSeries(chapter.manga_id),
