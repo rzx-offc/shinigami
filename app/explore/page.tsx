@@ -1,10 +1,10 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ExploreClient from "./explore-client";
-import { getCatalog } from "@/lib/catalog";
+import { getCatalog, type Series } from "@/lib/catalog";
 export const dynamic = "force-dynamic";
 export default async function ExplorePage() {
-  let items = [];
+  let items: Series[] = [];
   let error = "";
   try { items = await getCatalog(); } catch (e) { error = e instanceof Error ? e.message : "Gagal memuat katalog."; }
   const safe = items.map(x=>({id:x.manga_id,title:x.title,cover:x.cover_portrait_url||x.cover_image_url||"",type:x.category||"manga",status:x.status||"",chapter:x.latest_chapter_number==null?"":String(x.latest_chapter_number)}));

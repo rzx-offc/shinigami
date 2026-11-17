@@ -3,10 +3,10 @@ import Link from "next/link";
 import { ArrowRight, Flame, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import { chapterOf, coverOf, getCatalog } from "@/lib/catalog";
+import { chapterOf, coverOf, getCatalog, type Series } from "@/lib/catalog";
 export const dynamic = "force-dynamic";
 export default async function Home() {
-  let items = [];
+  let items: Series[] = [];
   let error = "";
   try { items = await getCatalog(); } catch (e) { error = e instanceof Error ? e.message : "Gagal memuat katalog."; }
   const featured = items.filter(x => x.is_recommended).slice(0, 6);
@@ -34,7 +34,7 @@ export default async function Home() {
   </main>;
 }
 function BookOpenMark(){return <span>CHAPTER<br/>HUB</span>}
-function TitleCard({item}:{item:any}) {
+function TitleCard({item}:{item:Series}) {
   const cover=coverOf(item);
   return <Link href={`/series/${encodeURIComponent(item.manga_id)}`} className="title-card"><div className="poster">{cover ? <Image src={cover} alt={item.title} fill unoptimized sizes="(max-width:700px) 42vw,180px"/> : <div className="poster-fallback">{item.title.slice(0,1)}</div>}<span className="category-pill">{item.category || "series"}</span></div><div className="card-copy"><h3>{item.title}</h3><p>{chapterOf(item)} <span>·</span> {item.status || "Ongoing"}</p></div></Link>;
 }
