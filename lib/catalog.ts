@@ -27,8 +27,8 @@ export function coverOf(item: Series) {
 export function cleanDescription(value?: string | null) {
   if (!value) return "";
   return value
-    .replace(/\\\\([\\[\\]{}<>|\x60*_])/g, "$1")
-    .replace(/\\\\(?=\\s|$)/g, "")
+    .replace(/\\([^\w\s])/g, "$1")
+    .replace(/\\(?=\s|$)/g, "")
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
