@@ -4,7 +4,7 @@
 
 create table if not exists public.chapters (
   chapter_id text primary key,
-  manga_id text not null references public.series(manga_id) on delete cascade,
+  manga_id text not null,
   chapter_number numeric,
   title text,
   source_url text,
