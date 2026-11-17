@@ -1,5 +1,3 @@
-import { Series } from "@/lib/catalog";
-
 export type Chapter = {
   chapter_id: string;
   manga_id: string;
