@@ -27,8 +27,8 @@ export function coverOf(item: Series) {
 export function cleanDescription(value?: string | null) {
   if (!value) return "";
   return value
-    .replace(/\\([^\w\s])/g, "$1")
-    .replace(/\\(?=\s|$)/g, "")
+    .replace(/\\([^\\w\\s])/g, "$1")
+    .replace(/\\(?=\\s|$)/g, "")
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
@@ -49,5 +49,9 @@ export async function getCatalog(): Promise<Series[]> {
 }
 export async function getSeries(id: string): Promise<Series | null> {
   const rows = await request(`series?select=${columns}&manga_id=eq.${encodeURIComponent(id)}&limit=1`) as Series[];
+  return rows[0] || null;
+}
+export async function getSeriesByLatestChapter(chapterId: string): Promise<Series | null> {
+  const rows = await request(`series?select=${columns}&latest_chapter_id=eq.${encodeURIComponent(chapterId)}&limit=1`) as Series[];
   return rows[0] || null;
 }
