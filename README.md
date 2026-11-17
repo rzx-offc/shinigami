@@ -1,41 +1,19 @@
-# SHINIGAMI Reader
+# ChapterHub
 
-A custom dark editorial-style reading-library frontend built with Next.js 15, TypeScript, and CSS.
+ChapterHub is a Next.js 15 catalog and discovery website for manga, manhwa, and manhua metadata.
 
-## Requirements
-- Node.js 20.9+
-- npm
+## Features
+- Homepage with featured and recently updated titles
+- Search and category filters
+- Series detail pages
+- Supabase REST integration for the `public.series` metadata table
+- Responsive dark interface
 
 ## Setup
-```bash
-npm install
-```
+1. Install dependencies with `npm install`.
+2. Copy `.env.example` to `.env.local`.
+3. Set `SUPABASE_URL` and the project's public anon/publishable key as `SUPABASE_ANON_KEY`.
+4. Ensure Row Level Security is enabled and the `anon` role has SELECT access to `public.series`.
+5. Run `npm run dev` or deploy with `npm run build && npm start`.
 
-Put the catalog JSON exported by your scraper at either:
-- `data/catalog_all.json` (recommended), or
-- `catalog_all.json` in the project root.
-
-The catalog reader accepts a top-level array or an object containing a `data`, `results`, or `items` array. It supports the scraper's fields:
-- ID/title: `manga_id`, `title`
-- Cover: `cover_image_url`, `cover_portrait_url` (also accepts common cover/image aliases)
-- Description: `description`
-- Format: `taxonomy.Format[].name` or `_category`
-- Latest release: `latest_chapter_id`, `latest_chapter_number`, `latest_chapter_time`
-
-Run locally:
-```bash
-npm run dev
-```
-
-Build and start:
-```bash
-npm run build
-npm start
-```
-
-## Current pages
-- `/` Home
-- `/explore` Search and category filters
-- `/series/[id]` Series metadata page
-
-Chapter/reader integration is intentionally not wired to a third-party content source yet. Connect only a source/API that you are authorized to display, or use content you own or have licensed. Do not mirror protected chapter images without permission.
+Do not use a Supabase service-role/secret key in the website environment. The site only reads metadata; chapter pages/images must come from a source you are authorized to display.

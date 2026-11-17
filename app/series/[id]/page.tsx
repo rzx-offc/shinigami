@@ -1,62 +1,16 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpen } from "lucide-react";
-import { getCatalog } from "@/lib/catalog";
-
+import { ArrowLeft, BookOpen, Bookmark, Eye } from "lucide-react";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+import { getSeries, coverOf, chapterOf } from "@/lib/catalog";
 export const dynamic = "force-dynamic";
-
-export default async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const decodedId = decodeURIComponent(id);
-  const item = getCatalog().find((series) => String(series.id) === decodedId || String(series.slug) === decodedId);
-
-  if (!item) notFound();
-
-  const cover = item.cover || "";
-  const synopsis = String(item.synopsis ?? item.description ?? "").trim() || "Sinopsis belum tersedia.";
-  const latestChapter = String(item.latest_chapter || "").trim();
-  const status = item.status ? `Status ${item.status}` : "Status unavailable";
-
-  return (
-    <main>
-      <header className="topbar wrap">
-        <Link className="brand" href="/">
-          <span className="brand-mark">S</span>
-          <span>SHINIGAMI<span className="brand-dot">.</span></span>
-        </Link>
-        <Link className="text-link" href="/explore"><ArrowLeft size={15} /> Explore</Link>
-      </header>
-
-      <section className="detail wrap">
-        <div className="detail-cover">
-          {cover ? <Image src={cover} alt={item.title} fill unoptimized sizes="260px" /> : <div className="cover-placeholder">{item.title.slice(0, 1)}</div>}
-        </div>
-        <div className="detail-copy">
-          <div className="eyebrow">{String(item.type || "MANGA").toUpperCase()}</div>
-          <h1>{item.title}</h1>
-          <div className="detail-tags">
-            <span>{status}</span>
-            <span>{String(item.type || "Series")}</span>
-            {item.latest_chapter_number !== undefined && item.latest_chapter_number !== null
-              ? <span>{latestChapter}</span>
-              : null}
-          </div>
-          <p>{synopsis}</p>
-          <div className="chapter-panel">
-            <BookOpen size={18} />
-            <div>
-              <strong>Chapter list</strong>
-              <p>{latestChapter ? `Metadata katalog mencatat rilisan terbaru: ${latestChapter}.` : "Metadata chapter belum tersedia di katalog."} Daftar baca akan dihubungkan setelah sumber chapter yang berizin siap.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="footer wrap">
-        <span>SHINIGAMI<span className="brand-dot">.</span></span>
-        <span>Read responsibly.</span>
-      </footer>
-    </main>
-  );
+export default async function SeriesPage({params}:{params:Promise<{id:string}>}) {
+ const {id}=await params; let item=null;
+ try { item=await getSeries(decodeURIComponent(id)); } catch { notFound(); }
+ if(!item) notFound();
+ const cover=coverOf(item);
+ const genres=item.taxonomy?.Genre?.map(x=>x.name).filter(Boolean)||[];
+ return <main><SiteHeader/><section className="detail-shell shell"><Link href="/explore" className="back-link"><ArrowLeft size={16}/> Back to explore</Link><div className="detail-layout"><div className="detail-poster">{cover?<Image src={cover} alt={item.title} fill priority unoptimized sizes="(max-width:700px) 38vw,300px"/>:<div className="poster-fallback">{item.title.slice(0,1)}</div>}</div><div className="detail-info"><div className="eyebrow">{(item.category||"SERIES").toUpperCase()} {item.release_year? `· ${item.release_year}`:""}</div><h1>{item.title}</h1>{item.alternative_title&&<p className="alt-title">{item.alternative_title}</p>}<div className="detail-badges"><span>{item.status||"Status unknown"}</span><span>{chapterOf(item)}</span></div><p className="synopsis">{item.description||"Sinopsis belum tersedia."}</p>{genres.length>0&&<div className="genre-list">{genres.map(g=><span key={g}>{g}</span>)}</div>}<div className="detail-stats"><div><Eye size={16}/><strong>{Number(item.view_count||0).toLocaleString("id-ID")}</strong><small>Views</small></div><div><Bookmark size={16}/><strong>{Number(item.bookmark_count||0).toLocaleString("id-ID")}</strong><small>Bookmarks</small></div></div><div className="chapter-info"><BookOpen size={19}/><div><strong>Chapter information</strong><p>Latest chapter recorded: {chapterOf(item)}. Chapter reading is not enabled until an authorized chapter source is configured.</p></div></div></div></div></section><SiteFooter/></main>;
 }
