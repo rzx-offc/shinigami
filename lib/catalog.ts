@@ -10,7 +10,7 @@ export type Series = {
   is_recommended?: boolean; country_id?: string | null;
 };
 const columns = "manga_id,title,alternative_title,cover_image_url,cover_portrait_url,description,latest_chapter_id,latest_chapter_number,latest_chapter_time,taxonomy,category,status,user_rate,view_count,release_year,bookmark_count,rank,is_recommended,country_id";
-const baseUrl = process.env.SUPABASE_URL || "https://ejytejttooudazulhrxc.supabase.co";
+const baseUrl = process.env.SUPABASE_URL || "https://zrrzshymjvwzxbabtkrw.supabase.co";
 const anonKey = process.env.SUPABASE_ANON_KEY;
 async function request(path: string) {
   if (!anonKey) throw new Error("SUPABASE_ANON_KEY belum diatur.");
